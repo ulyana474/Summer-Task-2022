@@ -1,27 +1,37 @@
 import React from 'react';
+import TodoItem from "./TodoItem";
 
 class Input extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = { username: '' }
-    }
+  constructor(props) {
+    super(props)
+    this.state = { todoList: [] }
+  }
 
-handleInputChange(username) {
-  this.setState({username})
-}
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const value = (event.target.elements.todoitem.value)
+    this.setState(({todoList}) => ({
+      todoList: todoList.concat(value)
+    }))
+  }
+
+
 render() {
-  const { username } = this.state
+  const { todoList } = this.state
   return (
     <div>
-      <div>
-        <input 
+      <h2>Enter your to-do</h2>
+      <form onSubmit={this.handleSubmit}>
+        <label>Todo Item</label>
+        <input
           type="text"
-          value={this.state.username}
-          onChange={event => this.handleInputChange(event.target.value)}
+          name="todoitem"
         />
-        {username}
-      </div>
-    </div>
+        <button type="submit">Submit</button>
+      </form>
+      <h2>Your todo lists include:</h2>
+  { todoList.map(i => <TodoItem item={i} /> )}
+    </div >
   )
 }
 }
