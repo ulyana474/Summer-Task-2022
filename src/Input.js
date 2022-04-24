@@ -1,23 +1,23 @@
 import React from 'react';
-import TodoItem from "./TodoItem";
+import RepoItem from "./RepoItem";
 
 class Input extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { todoList: [] }
+    this.state = { repoList: [] }
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const value = (event.target.elements.todoitem.value)
-    this.setState(({todoList}) => ({
-      todoList: todoList.concat(value)
+    const value = (event.target.elements.inputField.value)
+    this.setState(({repoList}) => ({
+      repoList: repoList.concat(value)
     }))
+    event.target.reset();
   }
 
-
 render() {
-  const { todoList } = this.state
+  const { repoList } = this.state
   return (
     <div>
       <h2>Enter your to-do</h2>
@@ -25,12 +25,11 @@ render() {
         <label>Todo Item</label>
         <input
           type="text"
-          name="todoitem"
+          name="inputField"
         />
-        <button type="submit">Submit</button>
       </form>
       <h2>Your todo lists include:</h2>
-  { todoList.map(i => <TodoItem item={i} /> )}
+  { repoList.map(i => <RepoItem item={i} /> )}
     </div >
   )
 }

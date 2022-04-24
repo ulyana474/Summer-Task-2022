@@ -1,6 +1,6 @@
 import React from 'react';
 	
-const TodoItem = (props) => {
+const RepoItem = (props) => {
   return (
     <div>
       {props.item}
@@ -8,4 +8,4 @@ const TodoItem = (props) => {
   )
 }
 
-export default TodoItem;
+export default RepoItem;
