@@ -12,9 +12,10 @@ class RepoItem extends React.Component {
   }
   render(){
   return (
-    <div onClick={() => this.openInNewTab('https://google.com')}>
-      {this.props.item}
-    </div>
+    <div key={this.props.item.id} className="quote-view">{ this.props.item.login }</div>
+
+      
+   
   )
 }
 }

@@ -58,8 +58,8 @@ render() {
     } else {
     	// success
       var users = this.state.users.map(
-              user => <div key={user.id} className="quote-view">{ user.login }</div>
-          );
+              user => <RepoItem  item = {user} />
+      );
         //body = <p>Props: {this.props.user}</p>
     	body = <div>{users}</div>
     }
