@@ -7,12 +7,12 @@ class RepoItem extends React.Component {
   openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
-  onClick = (event) =>{
-    alert("click")
+  handleClick = (event) =>{
+    this.openInNewTab( this.props.item.html_url )
   }
   render(){
   return (
-    <div key={this.props.item.id} className="quote-view">{ this.props.item.login }</div>
+    <div  onClick = {this.handleClick} key={this.props.item.id} className="quote-view">{ this.props.item.login }</div>
 
       
    
