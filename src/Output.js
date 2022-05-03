@@ -7,7 +7,7 @@ class Output extends React.Component {
     this.state = {
       isLoaded: false,
       error: null,
-      users: []
+      repos: []
     };
     this.xhr = new XMLHttpRequest();
 
@@ -21,7 +21,7 @@ class Output extends React.Component {
 
           this.setState({
             isLoaded: true,
-            users: json.items
+            repos: json
           });
         }
         else {
@@ -36,7 +36,7 @@ class Output extends React.Component {
   }
 
   componentDidMount() {
-    let url = `https://api.github.com/search/users?q=${this.props.user}`;
+    let url = `https://api.github.com/users/${this.props.user}/repos`;
     this.xhr.open("GET", url, true);
     this.xhr.send();
   }
@@ -51,10 +51,10 @@ class Output extends React.Component {
       body = <div>Error occured: {this.state.error}</div>
     } else {
       // success
-      var users = this.state.users.map(
-        user => <RepoItem item={user} />
+      var repos = this.state.repos.map(
+        repo => <RepoItem item={repo} />
       );
-      body = <div>{users}</div>
+      body = <div>{repos}</div>
     }
 
     return body;
