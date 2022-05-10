@@ -1,5 +1,6 @@
 import React from 'react';
 import RepoItem from "./RepoItem";
+import NotFound from "./NotFound";
 
 class Output extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class Output extends React.Component {
       body = <div>Loading...</div>
     } else if (this.state.error) {
       // error
-      body = <div>Error occured: {this.state.error}</div>
+      body = <div><NotFound /></div>
     } else {
       // success
       var repos = this.state.repos.map(

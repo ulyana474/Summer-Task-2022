@@ -3,6 +3,7 @@ import Output from "./Output";
 import InitialState from './InitialState';
 import "./style/Initial_state_page.css"
 import "./style/css_reset.css"
+import "./style/Not_found.css"
 import octocat from "./style/pictures/octocat.png"
 import search from "./style/pictures/search.png"
 
