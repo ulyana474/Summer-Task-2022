@@ -1,5 +1,11 @@
 import React from 'react';
 import Output from "./Output";
+import InitialState from './InitialState';
+import "./style/Initial_state_page.css"
+import "./style/css_reset.css"
+import octocat from "./style/pictures/octocat.png"
+import search from "./style/pictures/search.png"
+
 
 class Input extends React.Component {
   constructor(props) {
@@ -19,17 +25,18 @@ class Input extends React.Component {
   render() {
     return (
       <div>
-        <h2>Enter your to-do</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>Todo Item</label>
-          <input
-            type="text"
-            name="inputField"
-          />
+        <div className = "search-box">
+            <div className = "blue-line">
+                <img src  = {octocat} className = "octocat-image" alt = "octocat" />
+                    <div className = "white-line">
+                        <img src = {search} className = "search-image" alt = "search" />
+                        <input className = "search-txt" type = "text" name = "inputField" placeholder="Enter GitHub username"></input>
+                    </div>
+            </div>
+        </div>
         </form>
-        <h2>Your todo lists include:</h2>
-        {this.state.user ? <Output user={this.state.user} key={this.state.user} /> : <div>initial state</div>}
-
+        {this.state.user ? <Output user={this.state.user} key={this.state.user} /> : <InitialState />}
       </div >
     )
   }

@@ -1,0 +1,149 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.search-box{
+    display: flex;
+    flex-direction: row;
+}
+
+.blue-line{
+display: flex;
+flex-direction: row;
+height: 72px;
+width: 100%;
+background: #0064EB;
+}
+
+.white-line{
+display: flex;
+flex-direction: row;
+height: 40px;
+width: 500px;
+margin-left: 22.2px;
+margin-top: 16px;
+background: #FFFFFF;
+border-radius: 6px;
+border-color: #FFFFFF;
+}
+
+.octocat-image{
+height: 40.004547119140625px;
+width: 40.98481369018555px;
+margin-top: 16px;
+margin-left: 41px;
+}
+
+.search-image{
+    height: 14px;
+    width: 14px;
+    margin-top: 13px;
+    margin-left: 19px;    
+}
+
+.search-txt{
+    height: 24px;
+    width: 256px;
+    border-radius: 0px;
+    border: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 11px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #808080;
+}
+
+#root{
+    height: 100%;
+    background-color: #F9F9F9;
+    width: 100%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.under-search{
+    align-items: center;
+}
+
+.big-search-image{
+    height: 64.16667938232422px;
+    width: 64.16752624511719px;
+    margin-top: 219.92px;
+    margin-bottom: 46.92px;
+}
+
+.under-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.start_searching{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 140%;
+    color: #808080;
+    
+}
+
+.git-hub-user{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 140%;
+    color: #808080;
+}
+
+@media only screen and (max-width: 604px) {
+    .white-line{
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+        width: 200px;
+        margin-left: 22.2px;
+        margin-top: 16px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        border-color: #FFFFFF;
+        }
+
+        .search-txt{
+            height: 24px;
+            width: 150px;
+            border-radius: 0px;
+            border: none;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            margin-left: 9px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 17px;
+            align-items: center;
+            letter-spacing: 0.01em;
+            color: #808080;
+        }
+
+        .search-image{
+            height: 13px;
+            width: 13px;
+            margin-top: 13px;
+            margin-left: 15px;    
+        }
+}
