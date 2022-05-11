@@ -1,6 +1,7 @@
 import React from 'react';
 import RepoItem from "./RepoItem";
 import NotFound from "./NotFound";
+import UserInfo from "./UserInfo";
 
 class Output extends React.Component {
   constructor(props) {
@@ -9,8 +10,7 @@ class Output extends React.Component {
       isLoaded: false,
       error: null,
       repos: [],
-      foto: null,
-      foloowers: null
+      foto: null
     };
     this.xhr = new XMLHttpRequest();
 
@@ -28,11 +28,6 @@ class Output extends React.Component {
             isLoaded: true,
             repos: json,
              foto: json[0].owner.avatar_url 
-          });
-          this.setState({
-            isLoaded: true,
-            repos: json,
-             followers: json[0].owner.avatar_url 
           });
         }
         else {
@@ -65,7 +60,7 @@ class Output extends React.Component {
       var repos = this.state.repos.map(
         repo => <RepoItem item={repo} />
       );
-      body = <div><img src = {this.state.foto}></img><div>{repos}</div></div>
+      body = <div><img src={this.state.foto}></img><div><UserInfo user={this.props.user} key={this.props.user}/></div><div>{repos}</div></div>
     }
 
     return body;
