@@ -8,7 +8,9 @@ class Output extends React.Component {
     this.state = {
       isLoaded: false,
       error: null,
-      repos: []
+      repos: [],
+      foto: null,
+      foloowers: null
     };
     this.xhr = new XMLHttpRequest();
 
@@ -17,12 +19,20 @@ class Output extends React.Component {
         if (this.xhr.status === 200) {
           // request successful
           var response = this.xhr.responseText;
-          //alert(response);
+         /*  var foto = "https://avatars.githubusercontent.com/u/91842907?v=4"; */
+          /* alert(response); */
+          
           let json = JSON.parse(response);
-
+          //console.log(json[0].owner.avatar_url)
           this.setState({
             isLoaded: true,
-            repos: json
+            repos: json,
+             foto: json[0].owner.avatar_url 
+          });
+          this.setState({
+            isLoaded: true,
+            repos: json,
+             followers: json[0].owner.avatar_url 
           });
         }
         else {
@@ -55,7 +65,7 @@ class Output extends React.Component {
       var repos = this.state.repos.map(
         repo => <RepoItem item={repo} />
       );
-      body = <div>{repos}</div>
+      body = <div><img src = {this.state.foto}></img><div>{repos}</div></div>
     }
 
     return body;
