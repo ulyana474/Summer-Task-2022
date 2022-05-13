@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPaginate from 'react-paginate';
 import RepoItem from "./RepoItem";
 import "./style/main_state.css"
 import followers from "./style/pictures/followers.png"
@@ -95,8 +96,16 @@ class UserInfo extends React.Component {
       <div className="right-col">
           <div className="repo-number">Repositories({this.state.repo_count})</div>
           <div>{repos}</div>
+          <ReactPaginate className="pagination"
+                    previousLabel={"prev"}
+                    pageCount={Math.ceil(this.state.repo_count / 4)}
+                    marginPagesDisplayed={1}
+                    onPageChange={this.props.handlePageClick}
+                    pageRangeDisplayed={3}
+                    breakLabel={"..."}
+                    nextLabel={"next"}></ReactPaginate>
       </div>
-    </div>
+      </div>
         }
     return body;
   }

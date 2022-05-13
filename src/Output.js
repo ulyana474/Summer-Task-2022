@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactPaginate from 'react-paginate';
 import NotFound from "./NotFound";
 import UserInfo from "./UserInfo";
 import "./style/main_state.css"
@@ -70,18 +69,7 @@ class Output extends React.Component {
       
 
       body = 
-      <div><UserInfo user={this.props.user} key={this.props.user} repos = {this.state.repos}/>
-      <div className="footer">
-       <ReactPaginate className="pagination"
-                    previousLabel={"prev"}
-                    pageCount={50}
-                    marginPagesDisplayed={1}
-                    onPageChange={this.handlePageClick}
-                    pageRangeDisplayed={3}
-                    breakLabel={"..."}
-                    nextLabel={"next"}></ReactPaginate>
-      </div>
-      </div>
+      <div><UserInfo user={this.props.user} key={this.props.user} repos = {this.state.repos} handlePageClick = {this.handlePageClick.bind(this)}/></div>
 
     }
 
