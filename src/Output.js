@@ -1,7 +1,7 @@
 import React from 'react';
-import RepoItem from "./RepoItem";
 import NotFound from "./NotFound";
 import UserInfo from "./UserInfo";
+import "./style/main_state.css"
 
 class Output extends React.Component {
   constructor(props) {
@@ -9,8 +9,7 @@ class Output extends React.Component {
     this.state = {
       isLoaded: false,
       error: null,
-      repos: [],
-      foto: null
+      repos: []
     };
     this.xhr = new XMLHttpRequest();
 
@@ -19,15 +18,13 @@ class Output extends React.Component {
         if (this.xhr.status === 200) {
           // request successful
           var response = this.xhr.responseText;
-         /*  var foto = "https://avatars.githubusercontent.com/u/91842907?v=4"; */
-          /* alert(response); */
+      
           
           let json = JSON.parse(response);
           //console.log(json[0].owner.avatar_url)
           this.setState({
             isLoaded: true,
-            repos: json,
-             foto: json[0].owner.avatar_url 
+            repos: json
           });
         }
         else {
@@ -57,10 +54,9 @@ class Output extends React.Component {
       body = <div><NotFound /></div>
     } else {
       // success
-      var repos = this.state.repos.map(
-        repo => <RepoItem item={repo} />
-      );
-      body = <div><img src={this.state.foto}></img><div><UserInfo user={this.props.user} key={this.props.user}/></div><div>{repos}</div></div>
+      
+
+      body = <div><UserInfo user={this.props.user} key={this.props.user} repos = {this.state.repos}/></div>
     }
 
     return body;
