@@ -16,7 +16,8 @@ class UserInfo extends React.Component {
       followers: 0,
       following: 0,
       repo_count: 0,
-      foto: null
+      foto: null,
+      html_url: null
     };
     this.xhr = new XMLHttpRequest();
 
@@ -34,10 +35,9 @@ class UserInfo extends React.Component {
              followers: json.followers,
              following: json.following,
              repo_count: json.public_repos,
-             foto: json.avatar_url
+             foto: json.avatar_url,
+             html_url: json.html_url
           });
-         /*  console.log(typeof(this.state.followers));
-          console.log(typeof(this.state.following)); */
         }
         else {
           // error
@@ -65,6 +65,13 @@ class UserInfo extends React.Component {
     return `${rounded}k`
   }
 
+  openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+  handleClick = (event) => {
+    this.openInNewTab(this.state.html_url);
+  }
+
   render() {
       let body;
       if (!this.state.isLoaded) {
@@ -83,7 +90,7 @@ class UserInfo extends React.Component {
       <div className="left-col">
         <img className = "user-foto" src={this.state.foto}></img>
         <div className="user-name">{this.state.name}</div>
-        <div className="nickname">{this.state.nickname}</div>
+        <div className="nickname" onClick={this.handleClick} /* key = {this.props.item.id} */>{this.state.nickname}</div>
         <div className="follows">
           <div className='user-info'>
             <img src = {followers} className="followers-img"></img>

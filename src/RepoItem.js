@@ -12,7 +12,10 @@ class RepoItem extends React.Component {
   }
   render() {
     return (
-      <div onClick={this.handleClick} key={this.props.item.id} className="quote-view">{this.props.item.name}</div>
+      <div class="repo-block">
+        <p className = "repo-name" onClick={this.handleClick} key={this.props.item.id}>{this.props.item.name}</p>
+        <p className = "repo-description">{this.props.item.description}</p>
+      </div>
     )
   }
 }
