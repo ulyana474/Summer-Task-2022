@@ -66,7 +66,6 @@ class Output extends React.Component {
       body = <div><NotFound /></div>
     } else {
       // success
-      
 
       body = 
       <div><UserInfo user={this.props.user} key={this.props.user} repos = {this.state.repos} handlePageClick = {this.handlePageClick.bind(this)}/></div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import RepoItem from "./RepoItem";
+import EmptyRepos from "./EmptyRepos"
 import "./style/main_state.css"
 import followers from "./style/pictures/followers.png"
 import following from "./style/pictures/following.png"
@@ -90,7 +91,7 @@ class UserInfo extends React.Component {
       <div className="left-col">
         <img className = "user-foto" src={this.state.foto}></img>
         <div className="user-name">{this.state.name}</div>
-        <div className="nickname" onClick={this.handleClick} /* key = {this.props.item.id} */>{this.state.nickname}</div>
+        <div className="nickname" onClick={this.handleClick}>{this.state.nickname}</div>
         <div className="follows">
           <div className='user-info'>
             <img src = {followers} className="followers-img"></img>
@@ -101,20 +102,23 @@ class UserInfo extends React.Component {
         </div>
       </div>
       <div className="right-col">
+        { this.state.repo_count == 0 ? <EmptyRepos /> : <div>
           <div className="repo-number">Repositories({this.state.repo_count})</div>
-          <div>{repos}</div>
+           <div>{repos}</div>
           <ReactPaginate className="pagination"
-                    previousLabel={"prev"}
+                    previousLabel={'<'}
                     pageCount={Math.ceil(this.state.repo_count / 4)}
                     marginPagesDisplayed={1}
                     onPageChange={this.props.handlePageClick}
                     pageRangeDisplayed={3}
                     breakLabel={"..."}
-                    nextLabel={"next"}></ReactPaginate>
+                    nextLabel={'>'}></ReactPaginate>
+                    </div>
+                    }
       </div>
       </div>
         }
-    return body;
+      return body;
   }
 }
 export default UserInfo;
