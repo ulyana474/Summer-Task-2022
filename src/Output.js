@@ -1,6 +1,7 @@
 import React from 'react';
 import NotFound from "./NotFound";
 import UserInfo from "./UserInfo";
+import Loader from './Loader';
 import "./style/main_state.css"
 
 class Output extends React.Component {
@@ -58,7 +59,7 @@ class Output extends React.Component {
     let body;
     if (!this.state.isLoaded) {
       // yet loading
-      body = <div>Loading...</div>
+      body = <div><Loader /></div>
     } else if (this.state.error) {
       // error
       body = <div><NotFound /></div>

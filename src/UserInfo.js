@@ -88,7 +88,7 @@ class UserInfo extends React.Component {
       let body;
       if (!this.state.isLoaded) {
         // yet loading
-        body = <div>Loading...</div>}
+        body = <div></div>}
         else if (this.state.error) {
         body = <div>Error</div>}
         else{ 
@@ -115,7 +115,7 @@ class UserInfo extends React.Component {
         </div>
       </div>
       <div className="right-col">
-        { this.state.repo_count == 0 ? <EmptyRepos /> : <div>
+        { this.state.repo_count === 0 ? <EmptyRepos /> : <div>
           <div className="repo-number">Repositories({this.state.repo_count})</div>
            <div>{repos}</div>
            <div className="pagination-info">
