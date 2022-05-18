@@ -219,17 +219,25 @@ margin-left: 41px;
     outline: none;
   }
 
+  .pagination > .selected > a{
+    background-color: #0064EB;
+    color: #fff;
+    border-radius: 3px;
+  }
+
   .pagination > li > a{
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
+    
   }
   .pagination:hover{
       color: #0064EB;
   }
   .pagination > li > a, .pagination > li > span{
-    color:#808080;
+    color: #808080;
   }
+
   
   
 
