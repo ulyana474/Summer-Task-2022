@@ -118,7 +118,8 @@ class UserInfo extends React.Component {
         { this.state.repo_count == 0 ? <EmptyRepos /> : <div>
           <div className="repo-number">Repositories({this.state.repo_count})</div>
            <div>{repos}</div>
-           <p>{selected_min} - {selected_max} of {this.state.repo_count} items</p>
+           <div className="pagination-info">
+           <p className="pagination-status">{selected_min} - {selected_max} of {this.state.repo_count} items</p>
           <ReactPaginate className="pagination"
                     previousLabel={'<'}
                     pageCount={Math.ceil(this.state.repo_count / 4)}
@@ -127,6 +128,7 @@ class UserInfo extends React.Component {
                     pageRangeDisplayed={3}
                     breakLabel={"..."}
                     nextLabel={'>'}></ReactPaginate>
+                    </div>
                     </div>
                     }
       </div>

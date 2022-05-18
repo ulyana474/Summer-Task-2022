@@ -212,11 +212,27 @@ margin-left: 41px;
     margin-right: 69px;
 }
 
+.pagination-info{
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    margin-right: 78px;
+}
+
 .pagination {
     margin: 15px auto;
     display: flex;
     list-style: none;
     outline: none;
+    margin-top: 26px;
+    margin-left: 23.59px;
+  }
+
+  .pagination-status{
+    margin-top: 26px;
+    color:#808080;
   }
 
   .pagination > .selected > a{
@@ -229,17 +245,15 @@ margin-left: 41px;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
-    
   }
-  .pagination:hover{
-      color: #0064EB;
-  }
-  .pagination > li > a, .pagination > li > span{
+
+  .pagination > li > a{
     color: #808080;
   }
 
-  
-  
+  .pagination > li > a:active{
+    color: #0064EB;
+  }
 
 @media only screen and (min-width: 1280px) {
 
