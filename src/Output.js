@@ -51,9 +51,7 @@ class Output extends React.Component {
 
   handlePageClick = (e) => {
     const page = e.selected + 1;
-
     this.makeRequest(page);
-
 };
 
   render() {

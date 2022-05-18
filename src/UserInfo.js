@@ -18,7 +18,8 @@ class UserInfo extends React.Component {
       following: 0,
       repo_count: 0,
       foto: null,
-      html_url: null
+      html_url: null,
+      selected_page: 0
     };
     this.xhr = new XMLHttpRequest();
 
@@ -69,9 +70,19 @@ class UserInfo extends React.Component {
   openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
+
   handleClick = (event) => {
     this.openInNewTab(this.state.html_url);
   }
+
+  handlePaginationPageClick = (e) => {
+    const page = e.selected;
+    this.setState({
+      selected_page: page
+    });
+    // make request in output
+    this.props.handlePageClick(e);
+};
 
   render() {
       let body;
@@ -86,6 +97,8 @@ class UserInfo extends React.Component {
             var repos = this.props.repos.map(
               repo => <RepoItem item={repo} />
             );
+            let selected_min = this.state.selected_page * 4 + 1;
+            let selected_max = Math.min((this.state.selected_page + 1) * 4, this.state.repo_count)
     body = 
     <div className="wrapper-output">
       <div className="left-col">
@@ -105,11 +118,12 @@ class UserInfo extends React.Component {
         { this.state.repo_count == 0 ? <EmptyRepos /> : <div>
           <div className="repo-number">Repositories({this.state.repo_count})</div>
            <div>{repos}</div>
+           <p>{selected_min} - {selected_max} of {this.state.repo_count} items</p>
           <ReactPaginate className="pagination"
                     previousLabel={'<'}
                     pageCount={Math.ceil(this.state.repo_count / 4)}
                     marginPagesDisplayed={1}
-                    onPageChange={this.props.handlePageClick}
+                    onPageChange={this.handlePaginationPageClick}
                     pageRangeDisplayed={3}
                     breakLabel={"..."}
                     nextLabel={'>'}></ReactPaginate>
