@@ -4,8 +4,8 @@ import EmptyRepos from "./EmptyRepos";
 import Loader from './Loader';
 import RepoItem from "./RepoItem";
 import "./style/main_state.css";
-import followers from "./style/pictures/followers.png";
-import following from "./style/pictures/following.png";
+import followers from "./style/pictures/followers.svg";
+import following from "./style/pictures/following.svg";
 
 class UserInfo extends React.Component {
   constructor(props) {

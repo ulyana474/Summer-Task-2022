@@ -1,6 +1,6 @@
 import React from 'react';
 import "./style/empty_repos.css";
-import cross from "./style/pictures/cross.png";
+import cross from "./style/pictures/cross.svg";
 
 const EmptyRepos = () => {
     return (<div className='right-col-empty'>

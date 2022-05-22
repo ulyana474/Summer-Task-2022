@@ -4,8 +4,8 @@ import Output from "./Output";
 import "./style/css_reset.css";
 import "./style/Initial_state_page.css";
 import "./style/Not_found.css";
-import octocat from "./style/pictures/octocat.png";
-import search from "./style/pictures/search.png";
+import octocat from "./style/pictures/octocat.svg";
+import search from "./style/pictures/search.svg";
 
 class Input extends React.Component {
   constructor(props) {

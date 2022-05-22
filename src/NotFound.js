@@ -1,5 +1,5 @@
 import React from 'react';
-import person from "./style/pictures/person.png";
+import person from "./style/pictures/person.svg";
 
 const NotFound = () => {
     return (<div className="wrapper">

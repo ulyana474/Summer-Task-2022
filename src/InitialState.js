@@ -1,5 +1,5 @@
 import React from 'react';
-import bigSearch from "./style/pictures/big-search.png";
+import bigSearch from "./style/pictures/big-search.svg";
 
 const InitialState = () => {
     return (<div className="wrapper">
