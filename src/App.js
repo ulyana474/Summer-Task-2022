@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useTransition } from 'react';
 import Input from "./Input";

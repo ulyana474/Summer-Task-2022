@@ -102,22 +102,22 @@ class UserInfo extends React.Component {
     body = 
     <div className="wrapper-output">
       <div className="left-col">
-        <img className = "user-foto" src={this.state.foto}></img>
+        <img className = "user-foto" src={this.state.foto} alt = "user-foto"></img>
         <div className="user-name">{this.state.name}</div>
         <div className="nickname" onClick={this.handleClick}>{this.state.nickname}</div>
         <div className="follows">
-          <div className='user-info'>
-            <img src = {followers} className="followers-img"></img>
+          <div className="user-info">
+            <img src = {followers} className="followers-img" alt = "followers"></img>
             <div className="followers">{res1} followers</div>
-            <img src = {following} className = "following-img"></img>
+            <img src = {following} className = "following-img" alt = "following"></img>
             <div className="following">{res2} following</div>
           </div>
         </div>
       </div>
-      <div className="right-col">
-        { this.state.repo_count === 0 ? <EmptyRepos /> : <div>
+      <div>{ this.state.repo_count === 0 ? <EmptyRepos /> : <div>
+        <div className= "right-col">
           <div className="repo-number">Repositories({this.state.repo_count})</div>
-           <div>{repos}</div>
+           <div className = "repo-container">{repos}</div>
            <div className="pagination-info">
            <p className="pagination-status">{selected_min} - {selected_max} of {this.state.repo_count} items</p>
           <ReactPaginate className="pagination"
@@ -128,6 +128,7 @@ class UserInfo extends React.Component {
                     pageRangeDisplayed={3}
                     breakLabel={"..."}
                     nextLabel={'>'}></ReactPaginate>
+                    </div>
                     </div>
                     </div>
                     }

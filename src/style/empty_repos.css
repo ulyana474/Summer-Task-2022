@@ -18,4 +18,25 @@
     margin-top: 48px;
     color: #808080;
     margin-left: 261px;
+    white-space: nowrap;
 }
+
+@media only screen and (max-width: 842px){
+    
+    .right-col-empty{
+        margin-top: 160px;
+        margin-left: -350px;
+    }
+
+    .cross-pic{
+        width: 50px;
+        height: 36px;
+    }
+
+    .empty-message{
+        font-size: 19px;
+        margin-top: 28px;
+    }
+
+}
+
