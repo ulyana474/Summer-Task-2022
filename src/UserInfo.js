@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import EmptyRepos from "./EmptyRepos";
+import Loader from './Loader';
 import RepoItem from "./RepoItem";
 import "./style/main_state.css";
 import followers from "./style/pictures/followers.png";
@@ -91,7 +92,7 @@ class UserInfo extends React.Component {
     let body;
     if (!this.state.isLoaded) {
       // yet loading
-      body = <div></div>;
+      body = <div><Loader /></div>;
     }
     else if (this.state.error) {
       body = <div>Error</div>;
