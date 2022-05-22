@@ -1,56 +1,56 @@
-body{
+body {
     height: 100vh;
     overflow: hidden;
 }
 
-.search-box{
+.search-box {
     display: flex;
     flex-direction: row;
 }
 
-.blue-line{
-display: flex;
-flex-direction: row;
-height: 72px;
-width: 100%;
-left: 0px;
-top: 0px;
-border-radius: 0px;
-background: #0064EB;
+.blue-line {
+    display: flex;
+    flex-direction: row;
+    height: 72px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    background: #0064EB;
 }
 
-.white-line{
-display: flex;
-flex-direction: row;
-height: 40px;
-width: 50%;
-left: 0px;
-top: 0px;
-margin-left: 22px;
-margin-top: 16px;
-background: #FFFFFF;
-border-radius: 6px;
-border-color: #FFFFFF;
+.white-line {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 50%;
+    left: 0px;
+    top: 0px;
+    margin-left: 22px;
+    margin-top: 16px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border-color: #FFFFFF;
 }
 
-.octocat-image{
-height: 40px;
-width: 40px;
-margin-top: 16px;
-margin-left: 41px;
+.octocat-image {
+    height: 40px;
+    width: 40px;
+    margin-top: 16px;
+    margin-left: 41px;
 }
 
-.search-image{
+.search-image {
     height: 14px;
     width: 14px;
     left: 5px;
     top: 5px;
     border-radius: 0px;
     margin-top: 13px;
-    margin-left: 19px;    
+    margin-left: 19px;
 }
 
-.search-txt{
+.search-txt {
     height: 24px;
     width: 256px;
     border-radius: 0px;
@@ -68,11 +68,11 @@ margin-left: 41px;
     color: #808080;
 }
 
-.search-txt:focus{
-    color:black;
+.search-txt:focus {
+    color: black;
 }
 
-.wrapper-output{ 
+.wrapper-output {
     height: 100%;
     width: 100%;
     display: grid;
@@ -81,18 +81,18 @@ margin-left: 41px;
     background-color: #F9F9F9;
 }
 
-.left-col{
+.left-col {
     display: flex;
     flex-direction: column;
     margin-left: 10%;
 }
 
-.follows{
+.follows {
     display: flex;
     flex-direction: column;
 }
 
-.user-foto{
+.user-foto {
     width: 280px;
     height: 280px;
     margin-top: 39px;
@@ -100,7 +100,7 @@ margin-left: 41px;
     border-radius: 50%;
 }
 
-.user-name{
+.user-name {
     font-family: 'Inter';
     font-size: 26px;
     font-weight: 600;
@@ -111,7 +111,7 @@ margin-left: 41px;
 
 }
 
-.nickname{
+.nickname {
     font-family: 'Inter';
     font-size: 18px;
     font-weight: 400;
@@ -121,13 +121,13 @@ margin-left: 41px;
     margin-bottom: 25.24px;
 }
 
-.user-info{
+.user-info {
     display: flex;
     flex-direction: row;
     margin-top: 25.24px;
 }
 
-.followers{
+.followers {
     margin-right: 20px;
     font-family: 'Inter';
     font-size: 16px;
@@ -136,7 +136,7 @@ margin-left: 41px;
     text-align: left;
 }
 
-.following{
+.following {
     font-family: 'Inter';
     font-size: 16px;
     font-weight: 400;
@@ -144,30 +144,30 @@ margin-left: 41px;
     text-align: left;
 }
 
-.followers-img{
+.followers-img {
     height: 14px;
-    width:22.08px;
+    width: 22.08px;
     margin-right: 8.92px;
     margin-top: 4px;
 }
 
-.following-img{
+.following-img {
     height: 14px;
     width: 16.06px;
     margin-right: 12px;
     margin-top: 4px;
 }
 
-.right-col{
+.right-col {
     display: flex;
     flex-direction: column;
 }
 
-.repo-container{
+.repo-container {
     width: 100%;
 }
 
-.repo-number{
+.repo-number {
     font-family: 'Inter';
     font-size: 32px;
     font-weight: 600;
@@ -178,7 +178,7 @@ margin-left: 41px;
     margin-bottom: 29px;
 }
 
-.repo-block{
+.repo-block {
     resize: both;
     width: auto;
     height: auto;
@@ -189,7 +189,7 @@ margin-left: 41px;
     margin-bottom: 24px;
 }
 
-.repo-name{
+.repo-name {
     font-family: 'Inter';
     font-size: 24px;
     font-weight: 500;
@@ -200,7 +200,7 @@ margin-left: 41px;
     color: #0064EB;
 }
 
-.repo-description{
+.repo-description {
     font-family: 'Inter';
     font-size: 16px;
     font-weight: 400;
@@ -212,7 +212,7 @@ margin-left: 41px;
     text-overflow: ellipsis;
 }
 
-.pagination-info{
+.pagination-info {
     display: flex;
     flex-direction: row;
     right: 0;
@@ -228,235 +228,236 @@ margin-left: 41px;
     outline: none;
     margin-top: 26px;
     margin-left: 25px;
-  }
+}
 
-  .pagination-status{
+.pagination-status {
     margin-top: 26px;
-    color:#808080;
-  }
+    color: #808080;
+}
 
-  .pagination > .selected > a{
+.pagination>.selected>a {
     background-color: #0064EB;
     color: #fff;
     border-radius: 3px;
-  }
+}
 
-  .pagination > li > a{
+.pagination>li>a {
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
-  }
+}
 
-  .pagination > li > a{
+.pagination>li>a {
     color: #808080;
-  }
+}
 
-  .pagination > li > a:active{
+.pagination>li>a:active {
     color: #0064EB;
-  }
+}
 
 @media only screen and (max-width: 1280px) {
+.repo-name {
+    font-family: 'Inter';
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 29px;
+    margin-bottom: 8px;
+    margin-left: 32px;
+    margin-top: 6px;
+    color: #0064EB;
+}
 
-    .repo-name{
-        font-family: 'Inter';
-        font-size: 17px;
-        font-weight: 500;
-        line-height: 29px;
-        margin-bottom: 8px;
-        margin-left: 32px;
-        margin-top: 6px;
-        color: #0064EB;
-    }
-    
-    .repo-description{
-        font-family: 'Inter';
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 19px;
-        letter-spacing: 0px;
-        margin-left: 32px;
-    }
+.repo-description {
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    margin-left: 32px;
+}
 
-    .repo-block{
-        resize: both;
-        width: auto;
-        height: auto;
-        padding-left: 2px;
-        padding-right: 2px;
-        height: 70px;
-        background-color: #FFFFFF;
-        margin-right: 56px;
-        margin-bottom: 15px;
-    }
+.repo-block {
+    resize: both;
+    width: auto;
+    height: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 70px;
+    background-color: #FFFFFF;
+    margin-right: 56px;
+    margin-bottom: 15px;
+}
 }
 
 @media only screen and (max-width: 1279px) {
-     
-    .user-foto{
-        width: 150px;
-        height: 150px;
-    }
-
-    .user-name{
-        display: flex;
-        flex-wrap: nowrap;
-        font-size: 25px;
-        max-width: 300px;
-        max-height: 15px;
-        margin-bottom: 20px;
-    }
-
-    .nickname{
-        font-size: 15px;
-        margin-bottom: 15px;
-        max-height: 15px;
-    }
-
-    .followers, .following{
-        font-size: 13px;
-    }
-
-    .repo-container{
-        width: 85%;
-    }
-
-    .repo-block{
-        width: 90%;
-    }
-
-    .repo-description, .repo-name{
-        white-space: nowrap;
-    }
+.user-foto {
+    width: 150px;
+    height: 150px;
 }
 
-@media only screen and (max-width: 913px){
-    .user-name{
-        display: flex;
-        flex-wrap: nowrap;
-        font-size: 15px;
-    }
-
-    .nickname{
-        font-size: 12px;
-    }
-
-    .followers, .following{
-        white-space: nowrap;
-    }
-
-    .repo-description{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
+.user-name {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 25px;
+    max-width: 300px;
+    max-height: 15px;
+    margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 763px){
-
-        .left-col{
-            max-height: 300px;
-        }
-
-        .user-foto{
-            width: 50px;
-            height: 50px;
-        }
-
-        .nickname{
-            margin-bottom: 0px;
-        }
-
-        .follows{
-            margin: 0;
-        }
-
-        .user-name, .followers, .following{
-            white-space: nowrap;
-        }
-
-        .right-col{
-            margin-top: 200px;
-            width: 60%;
-            margin-left: 10%;
-            align-items: flex-end;
-        }
-
-        .repo-number{
-            margin-bottom: 0;
-        }
-
-        .repo-block{
-           max-height:33px;
-           padding-left: 2px;
-           padding-right: 2px;
-        }
-
-        .repo-name{
-            font-size: 9px;
-            white-space: nowrap;
-            margin-left: 7px;
-            margin-bottom: 0;
-            max-height: 15px;
-        }
-
-        .repo-description{
-            font-size: 6px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-left: 7px;
-        } 
+.nickname {
+    font-size: 15px;
+    margin-bottom: 15px;
+    max-height: 15px;
 }
 
-@media only screen and (max-width: 525px){
+.followers,
+.following {
+    font-size: 13px;
+}
 
-        .wrapper-output{
-            display: flex;
-            flex-direction: column;
-            max-width: 90%;
-        }
+.repo-container {
+    width: 85%;
+}
 
-        .left-col{
-            margin-top: 0;
-            width: 90%;
-        }
+.repo-block {
+    width: 90%;
+}
 
-        .user-foto{
-            margin-bottom: 0;
-            margin-top: 3px;
-        }
+.repo-description,
+.repo-name {
+    white-space: nowrap;
+}
+}
 
-        .right-col{
-            margin-top: 0;
-            width: 90%;
-            align-items: flex-end;
-        }
+@media only screen and (max-width: 913px) {
+.user-name {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 15px;
+}
 
-        .repo-number{
-            font-size: 15px;
-            text-align: center;
-            margin-top: 10px;
-        }
+.nickname {
+    font-size: 12px;
+}
 
-        .repo-description{
-            font-size: 6px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-left: 7px;
-        } 
+.followers,
+.following {
+    white-space: nowrap;
+}
 
-        .pagination{
-            margin-left: 0;
-        }
+.repo-description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+}
 
-        .pagination-info{
-            display: flex;
-            flex-direction: column;
-            margin-right: 20%;
-        }
+@media only screen and (max-width: 763px) {
+.left-col {
+    max-height: 300px;
+}
 
-        .pagination-status{
-            margin-left: 40px;
-        }
+.user-foto {
+    width: 50px;
+    height: 50px;
+}
+
+.nickname {
+    margin-bottom: 0px;
+}
+
+.follows {
+    margin: 0;
+}
+
+.user-name,
+.followers,
+.following {
+    white-space: nowrap;
+}
+
+.right-col {
+    margin-top: 200px;
+    width: 60%;
+    margin-left: 10%;
+    align-items: flex-end;
+}
+
+.repo-number {
+    margin-bottom: 0;
+}
+
+.repo-block {
+    max-height: 33px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.repo-name {
+    font-size: 9px;
+    white-space: nowrap;
+    margin-left: 7px;
+    margin-bottom: 0;
+    max-height: 15px;
+}
+
+.repo-description {
+    font-size: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 7px;
+}
+}
+
+@media only screen and (max-width: 525px) {
+.wrapper-output {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+}
+
+.left-col {
+    margin-top: 0;
+    width: 90%;
+}
+
+.user-foto {
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+
+.right-col {
+    margin-top: 0;
+    width: 90%;
+    align-items: flex-end;
+}
+
+.repo-number {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.repo-description {
+    font-size: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 7px;
+}
+
+.pagination {
+    margin-left: 0;
+}
+
+.pagination-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.pagination-status {
+    margin-left: 40px;
+}
 }

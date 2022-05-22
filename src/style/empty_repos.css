@@ -1,16 +1,16 @@
-.right-col-empty{
+.right-col-empty {
     display: flex;
     flex-direction: column;
 }
 
-.cross-pic{
+.cross-pic {
     width: 76px;
     height: 62px;
     margin-top: 221px;
     margin-left: 355px;
 }
 
-.empty-message{
+.empty-message {
     font-family: 'Inter';
     font-size: 22px;
     font-weight: 400;
@@ -21,22 +21,19 @@
     white-space: nowrap;
 }
 
-@media only screen and (max-width: 842px){
-    
-    .right-col-empty{
-        margin-top: 160px;
-        margin-left: -350px;
-    }
-
-    .cross-pic{
-        width: 50px;
-        height: 36px;
-    }
-
-    .empty-message{
-        font-size: 19px;
-        margin-top: 28px;
-    }
-
+@media only screen and (max-width: 842px) {
+.right-col-empty {
+    margin-top: 160px;
+    margin-left: -350px;
 }
 
+.cross-pic {
+    width: 50px;
+    height: 36px;
+}
+
+.empty-message {
+    font-size: 19px;
+    margin-top: 28px;
+}
+}

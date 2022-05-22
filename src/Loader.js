@@ -1,9 +1,8 @@
 import React from "react";
 import { PulseBubbleLoader } from "react-loaders-kit";
-import "./style/loader.css"
+import "./style/loader.css";
 
 function Loader() {
-
   const loaderProps = {
     loading: true,
     size: 275,
@@ -13,7 +12,7 @@ function Loader() {
 
   return (
     <div className="loader">
-        <PulseBubbleLoader {...loaderProps} />
+      <PulseBubbleLoader {...loaderProps} />
     </div>
   );
 }
