@@ -22,18 +22,18 @@
 }
 
 @media only screen and (max-width: 525px) {
-.right-col-empty {
-    margin-top: -15%;
-    margin-left: -25%;
-}
+    .right-col-empty {
+        margin-top: -15%;
+        margin-left: -25%;
+    }
 
-.cross-pic {
-    width: 10vw;
-    height: 9vw;
-}
+    .cross-pic {
+        width: 10vw;
+        height: 9vw;
+    }
 
-.empty-message{
-    margin-left: 40%;
-    font-size: 3.5vw;
-}
+    .empty-message {
+        margin-left: 40%;
+        font-size: 3.5vw;
+    }
 }
