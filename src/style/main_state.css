@@ -84,11 +84,6 @@ body {
     margin-left: 10%;
 }
 
-.follows {
-    display: flex;
-    flex-direction: column;
-}
-
 .user-foto {
     width: 280px;
     height: 280px;
@@ -117,6 +112,11 @@ body {
     margin-bottom: 25px;
 }
 
+.follows {
+    display: flex;
+    flex-direction: row;
+}   
+
 .user-info {
     display: flex;
     flex-direction: row;
@@ -124,6 +124,8 @@ body {
 }
 
 .followers {
+    display: flex;
+    flex-direction: row;
     margin-right: 20px;
     font-family: 'Inter';
     font-size: 16px;
@@ -133,6 +135,8 @@ body {
 }
 
 .following {
+    display: flex;
+    flex-direction: row;
     font-family: 'Inter';
     font-size: 16px;
     font-weight: 400;

@@ -1,23 +1,24 @@
 import React from 'react';
-import ReactPaginate from 'react-paginate';
 import EmptyRepos from "./EmptyRepos";
-import Loader from './Loader';
+import Followers from './Followers';
+import Following from './Following';
+import PaginationUser from './PaginationUser';
+import RepoNumber from './RepoNumber';
 import RepoItem from "./RepoItem";
+import UserFoto from './UserFoto';
 import "./style/main_state.css";
-import followers from "./style/pictures/followers.svg";
-import following from "./style/pictures/following.svg";
 
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      is_loaded: false,
       error: null,
       name: null,
       nickname: null,
-      followers: 0,
-      following: 0,
-      repo_count: 0,
+      followers: -1,
+      following: -1,
+      repo_count: -1,
       foto: null,
       html_url: null,
       selected_page: 1
@@ -31,7 +32,7 @@ class UserInfo extends React.Component {
           var response = this.xhr.responseText;
           let json = JSON.parse(response);
           this.setState({
-            isLoaded: true,
+            is_loaded: true,
             name: json.name,
             nickname: json.login,
             followers: json.followers,
@@ -44,7 +45,7 @@ class UserInfo extends React.Component {
         else {
           // error
           this.setState({
-            isLoaded: true,
+            is_loaded: true,
             error: this.xhr.responseText
           });
         }
@@ -63,6 +64,9 @@ class UserInfo extends React.Component {
   };
 
   convertNumbers = (number) => {
+    if (number < 0) {
+      return '';
+    }
     if (number < 1000) {
       return `${number}`;
     }
@@ -90,9 +94,9 @@ class UserInfo extends React.Component {
 
   render() {
     let body;
-    if (!this.state.isLoaded) {
+    if (!this.state.is_loaded) {
       // yet loading
-      body = <div><Loader /></div>;
+      body = <div></div>;
     }
     else if (this.state.error) {
       body = <div>Error</div>;
@@ -103,42 +107,30 @@ class UserInfo extends React.Component {
       var repos = this.props.repos.map(
         repo => <RepoItem item={repo} />
       );
-      let selected_min = this.state.selected_page * 4 + 1;
-      let selected_max = Math.min((this.state.selected_page + 1) * 4, this.state.repo_count);
       body =
         <div className="wrapper-output">
           <div className="left-col">
-            <img className="user-foto" src={this.state.foto} alt="user-foto"></img>
+            <UserFoto foto={this.state.foto} />
             <div className="user-name">{this.state.name}</div>
             <div className="nickname" onClick={this.handleClick}>{this.state.nickname}</div>
             <div className="follows">
-              <div className="user-info">
-                <img src={followers} className="followers-img" alt="followers"></img>
-                <div className="followers">{res1} followers</div>
-                <img src={following} className="following-img" alt="following"></img>
-                <div className="following">{res2} following</div>
-              </div>
+              <Followers res={res1} />
+              <Following res={res2} />
             </div>
           </div>
           <div>{this.state.repo_count === 0 ? <EmptyRepos /> : <div>
-                <div className="right-col">
-                  <div className="repo-number">Repositories({this.state.repo_count})</div>
-                  <div className="repo-container">{repos}</div>
-                  <div className="pagination-info">
-                    <p className="pagination-status">{selected_min} - {selected_max} of {this.state.repo_count} items</p>
-                    <ReactPaginate className="pagination"
-                        previousLabel={'<'}
-                        pageCount={Math.ceil(this.state.repo_count / 4)}
-                        marginPagesDisplayed={1}
-                        onPageChange={this.handlePaginationPageClick}
-                        pageRangeDisplayed={3}
-                        breakLabel={"..."}
-                        nextLabel={'>'}>
-                    </ReactPaginate>
-                  </div>
-                </div>
-              </div>
-              }
+            <div className="right-col">
+              <RepoNumber number={this.state.repo_count} />
+              <div className="repo-container">{repos}</div>
+              <PaginationUser
+                selected_page={this.state.selected_page}
+                repo_count={this.state.repo_count}
+                handlePaginationPageClick={this.handlePaginationPageClick}
+                res={res1}
+              />
+            </div>
+          </div>
+          }
           </div>
         </div>
     }

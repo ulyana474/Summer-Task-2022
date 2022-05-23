@@ -8,7 +8,7 @@ class Output extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
+      is_loaded: false,
       error: null,
       repos: []
     };
@@ -21,14 +21,14 @@ class Output extends React.Component {
           var response = this.xhr.responseText;
           let json = JSON.parse(response);
           this.setState({
-            isLoaded: true,
+            is_loaded: true,
             repos: json
           });
         }
         else {
           // error
           this.setState({
-            isLoaded: true,
+            is_loaded: true,
             error: this.xhr.responseText
           });
         }
@@ -57,7 +57,7 @@ class Output extends React.Component {
 
   render() {
     let body;
-    if (!this.state.isLoaded) {
+    if (!this.state.is_loaded) {
       // yet loading
       body = <div><Loader /></div>;
     } else if (this.state.error) {
